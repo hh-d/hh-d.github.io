@@ -48,12 +48,12 @@
       <el-table :data="VTableData" :border="true">
         <el-table-column prop="name" label="姓名"></el-table-column>
         <el-table-column prop="money" label="金额"></el-table-column>
-        <el-table-column prop="remark" label="是否还礼" width="100">
+        <!-- <el-table-column prop="remark" label="是否还礼" width="100">
           <template slot-scope="scope">
             <span v-if="scope.row.is_salute" style="color: green">已还礼</span>
             <span v-else></span>
           </template>
-        </el-table-column>
+        </el-table-column> -->
       </el-table>
     </div>
 
