@@ -36,10 +36,11 @@
           </el-input>
         </el-form-item>
         <el-form-item label="">
-          <el-button v-on:click="resetForm">重置</el-button>
-          <span style="color: #000; margin-right: 10px; float: right">
-            总数: {{ VTableData.length }}
-          </span>
+          <span>总人数: {{ VTableData.length }}</span>
+          <span style="float: right;">总金额: {{ totalMoney }}</span>
+        </el-form-item>
+        <el-form-item label="">
+          <el-button type="primary" v-on:click="resetForm" style="width: 100%;">重置</el-button>
         </el-form-item>
       </el-form>
       <el-table :data="VTableData" :border="true">
@@ -450,29 +451,12 @@
               money: "",
             },
             VTableData: [],
-            tableData: [
-              {
-                date: "2016-05-03",
-                name: "Tom",
-                address: "No. 189, Grove St, Los Angeles",
-              },
-              {
-                date: "2016-05-02",
-                name: "Tom",
-                address: "No. 189, Grove St, Los Angeles",
-              },
-              {
-                date: "2016-05-04",
-                name: "Tom",
-                address: "No. 189, Grove St, Los Angeles",
-              },
-              {
-                date: "2016-05-01",
-                name: "Tom",
-                address: "No. 189, Grove St, Los Angeles",
-              },
-            ],
           };
+        },
+        computed: {
+          totalMoney() {
+            return this.VTableData.reduce((a,b) => a + b.money, 0)
+          }
         },
         created() {
           this.VTableData = this.list;
