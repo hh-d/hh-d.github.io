@@ -37,10 +37,12 @@
         </el-form-item>
         <el-form-item label="">
           <span>总人数: {{ VTableData.length }}</span>
-          <span style="float: right;">总金额: {{ totalMoney }}</span>
+          <span style="float: right">总金额: {{ totalMoney }}</span>
         </el-form-item>
         <el-form-item label="">
-          <el-button type="primary" v-on:click="resetForm" style="width: 100%;">重置</el-button>
+          <el-button type="primary" v-on:click="resetForm" style="width: 100%"
+            >重置</el-button
+          >
         </el-form-item>
       </el-form>
       <el-table :data="VTableData" :border="true">
@@ -59,31 +61,6 @@
         data: function () {
           return {
             list: [
-              { name: "蔡昌友", money: 400 },
-              { name: "蔡家春", money: 300 },
-              { name: "蔡家红", money: 500 },
-              { name: "蔡世友", money: 300 },
-              { name: "蔡友琴", money: 500 },
-              { name: "曹文香", money: 1000 },
-              { name: "曹元友", money: 400 },
-              { name: "常家坤", money: 300 },
-              { name: "常其国", money: 300 },
-              { name: "常启超", money: 200 },
-              { name: "常友海", money: 300 },
-              { name: "陈彬", money: 600 },
-              { name: "陈茂军", money: 300 },
-              { name: "陈美俊", money: 500 },
-              { name: "陈月彬", money: 300 },
-              { name: "陈月学", money: 300 },
-              { name: "单其富", money: 300 },
-              { name: "单义红", money: 300 },
-              { name: "邓刚", money: 300 },
-              { name: "邓恒玉", money: 1000 },
-              { name: "邓祥福", money: 400 },
-              { name: "邓祥贵", money: 300 },
-              { name: "邓祥举", money: 300 },
-              { name: "邓祥启", money: 600 },
-              { name: "邓祥生", money: 400 },
               { name: "蔡昌友", money: 400 },
               { name: "蔡家春", money: 300 },
               { name: "蔡家红", money: 500 },
@@ -455,11 +432,31 @@
         },
         computed: {
           totalMoney() {
-            return this.VTableData.reduce((a,b) => a + b.money, 0)
-          }
+            return this.VTableData.reduce((a, b) => a + b.money, 0);
+          },
         },
         created() {
           this.VTableData = this.list;
+          // const arr = this.list.map((v) => v.name);
+
+          // const findDuplicates = (arr) => {
+          //   const unique = new Set();
+          //   const duplicates = [];
+          //   for (const item of arr) {
+          //     if (unique.has(item)) {
+          //       duplicates.push(item);
+          //     } else {
+          //       unique.add(item);
+          //     }
+          //   }
+          //   return { unique: [...unique], duplicates };
+          // };
+
+          // 使用示例
+          // const { unique, duplicates } = findDuplicates(arr);
+          // console.log(unique, duplicates)
+
+          // console.log([...new Set(arr)].length);
         },
         methods: {
           resetForm() {
