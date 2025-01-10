@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <title>结婚照片</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        #app ul  {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 5px;
+        }
+        #app ul  li{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+        }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+        <ul>
+            <li v-for="item in 100" :key="item">
+                <el-image
+        style="width: 100px; height: 100px"
+        :src="url"
+        :preview-src-list="srcList"
+      >
+      </el-image>
+    </li>
+        </ul>
+
+
+      <!-- <el-image
+        style="width: 100px; height: 100px"
+        :src="url"
+        :preview-src-list="srcList"
+      > -->
+      </el-image>
+    </div>
+
+    <!-- import Vue before Element -->
+    <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data() {
+          return {
+            imgs: [],
+            url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
+            srcList: [
+              "https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg",
+              "https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg",
+            ],
+          };
+        },
+        mounted() {
+          // this.imgs =
+          //   this.VTableData = this.list;
+          // const arr = this.list.map((v) => v.name);
+          // const findDuplicates = (arr) => {
+          //   const unique = new Set();
+          //   const duplicates = [];
+          //   for (const item of arr) {
+          //     if (unique.has(item)) {
+          //       duplicates.push(item);
+          //     } else {
+          //       unique.add(item);
+          //     }
+          //   }
+          //   return { unique: [...unique], duplicates };
+          // };
+          // 使用示例
+          // const { unique, duplicates } = findDuplicates(arr);
+          // console.log(unique, duplicates)
+          // console.log([...new Set(arr)].length);
+        },
+        methods: {
+          //   resetForm() {
+          //     this.form = {
+          //       name: "",
+          //       money: "",
+          //     };
+          //     this.VTableData = this.list;
+          //   },
+          //   searchName() {
+          //     this.VTableData = this.list.filter((item) => {
+          //       return !this.form.name || item.name.includes(this.form.name);
+          //     });
+          //   },
+          //   searchMoney() {
+          //     this.VTableData = this.list.filter((item) => {
+          //       return (
+          //         !this.form.money ||
+          //         Number(item.money) == Number(this.form.money)
+          //       );
+          //     });
+          //   },
+        },
+      });
+    </script>
+  </body>
+</html>
