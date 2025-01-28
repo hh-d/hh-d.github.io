@@ -11,106 +11,51 @@
       rel="stylesheet"
       href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
     /> -->
-    <link rel="stylesheet" href="./element.min.css" />
+    <link rel="stylesheet" href="./element.min.css">
 
     <title>结婚礼金</title>
   </head>
   <body>
     <div id="app">
-      <el-tabs type="border-card" v-model="activeTab">
-        <el-tab-pane label="结婚礼金" name="two">
-          <el-form :model="form" label-width="auto" ref="ruleFormRef">
-            <el-form-item label="" prop="name">
-              <el-input v-model="form.name" placeholder="搜索姓名">
-                <template #append>
-                  <el-button type="primary" v-on:click="searchName">
-                    搜索姓名
-                  </el-button>
-                </template>
-              </el-input>
-            </el-form-item>
-            <el-form-item label="" prop="money">
-              <el-input v-model="form.money" placeholder="搜索金额">
-                <template #append>
-                  <el-button type="primary" v-on:click="searchMoney">
-                    搜索金额
-                  </el-button>
-                </template>
-              </el-input>
-            </el-form-item>
-            <el-form-item label="">
-              <span>总人数: {{ VTableData.length }}</span>
-              <span style="float: right">总金额: {{ totalMoney }}</span>
-            </el-form-item>
-            <el-form-item label="">
-              <el-button
-                type="primary"
-                v-on:click="resetForm"
-                style="width: 100%"
-              >
-                重置
+      <el-form :model="form" label-width="auto" ref="ruleFormRef">
+        <el-form-item label="" prop="name">
+          <el-input v-model="form.name" placeholder="搜索姓名">
+            <template #append>
+              <el-button type="primary" v-on:click="searchName">
+                搜索姓名
               </el-button>
-            </el-form-item>
-          </el-form>
-
-          <el-table :data="VTableData" :border="true">
-            <el-table-column prop="name" label="姓名"></el-table-column>
-            <el-table-column prop="money" label="金额"></el-table-column>
-            <!-- <el-table-column prop="remark" label="是否还礼" width="100">
-              <template slot-scope="scope">
-                <span v-if="scope.row.is_salute" style="color: green">已还礼</span>
-                <span v-else></span>
-              </template>
-            </el-table-column> -->
-          </el-table>
-        </el-tab-pane>
-        <el-tab-pane label="十二岁礼金" name="one">
-          <el-form :model="onetwoform" label-width="auto" ref="ruleFormRef">
-            <el-form-item label="" prop="name">
-              <el-input v-model="onetwoform.name" placeholder="搜索姓名">
-                <template #append>
-                  <el-button type="primary" v-on:click="searchOneTwoName">
-                    搜索姓名
-                  </el-button>
-                </template>
-              </el-input>
-            </el-form-item>
-            <el-form-item label="" prop="money">
-              <el-input v-model="onetwoform.money" placeholder="搜索金额">
-                <template #append>
-                  <el-button type="primary" v-on:click="searchOneTwoMoney">
-                    搜索金额
-                  </el-button>
-                </template>
-              </el-input>
-            </el-form-item>
-            <el-form-item label="">
-              <span>总人数: {{ VOneTwoTableData.length }}</span>
-              <span style="float: right">总金额: {{ oneTwototalMoney }}</span>
-            </el-form-item>
-            <el-form-item label="">
-              <el-button
-                type="primary"
-                v-on:click="resetForm"
-                style="width: 100%"
-              >
-                重置
+            </template>
+          </el-input>
+        </el-form-item>
+        <el-form-item label="" prop="money">
+          <el-input v-model="form.money" placeholder="搜索金额">
+            <template #append>
+              <el-button type="primary" v-on:click="searchMoney">
+                搜索金额
               </el-button>
-            </el-form-item>
-          </el-form>
-
-          <el-table :data="VOneTwoTableData" :border="true">
-            <el-table-column prop="name" label="姓名"></el-table-column>
-            <el-table-column prop="money" label="金额"></el-table-column>
-            <!-- <el-table-column prop="remark" label="是否还礼" width="100">
-              <template slot-scope="scope">
-                <span v-if="scope.row.is_salute" style="color: green">已还礼</span>
-                <span v-else></span>
-              </template>
-            </el-table-column> -->
-          </el-table>
-        </el-tab-pane>
-      </el-tabs>
+            </template>
+          </el-input>
+        </el-form-item>
+        <el-form-item label="">
+          <span>总人数: {{ VTableData.length }}</span>
+          <span style="float: right">总金额: {{ totalMoney }}</span>
+        </el-form-item>
+        <el-form-item label="">
+          <el-button type="primary" v-on:click="resetForm" style="width: 100%"
+            >重置</el-button
+          >
+        </el-form-item>
+      </el-form>
+      <el-table :data="VTableData" :border="true">
+        <el-table-column prop="name" label="姓名"></el-table-column>
+        <el-table-column prop="money" label="金额"></el-table-column>
+        <!-- <el-table-column prop="remark" label="是否还礼" width="100">
+          <template slot-scope="scope">
+            <span v-if="scope.row.is_salute" style="color: green">已还礼</span>
+            <span v-else></span>
+          </template>
+        </el-table-column> -->
+      </el-table>
     </div>
 
     <!-- import Vue before Element -->
@@ -120,9 +65,8 @@
     <script>
       new Vue({
         el: "#app",
-        data() {
+        data () {
           return {
-            activeTab: "one",
             list: [
               { name: "蔡昌友", money: 400, is_salute: true },
               { name: "蔡家春", money: 300, is_salute: false },
@@ -491,234 +435,18 @@
               name: "",
               money: "",
             },
-            onetwoform: {
-              name: "",
-              money: "",
-            },
-            VTableData: [], // 结婚礼金
-            VOneTwoTableData: [], // 十二岁礼金
-            onetwolist: [
-              { name: "黄登举", money: 100 },
-              { name: "周红林", money: 300 },
-              { name: "黄庆中", money: 300 },
-              { name: "李峰", money: 500 },
-              { name: "马典树", money: 500 },
-              { name: "刘成喜", money: 500 },
-              { name: "马国柱", money: 100 },
-              { name: "黄家德", money: 200 },
-              { name: "李磊", money: 200 },
-              { name: "董立新", money: 500 },
-              { name: "张志阳", money: 100 },
-              { name: "刘德义", money: 120 },
-              { name: "李信华", money: 60 },
-              { name: "邓祥举", money: 50 },
-              { name: "邓恒玉", money: 200 },
-              { name: "吴军", money: 100 },
-              { name: "张华芳", money: 100 },
-              { name: "吴月珍", money: 50 },
-              { name: "熊登科", money: 60 },
-              { name: "陈美俊", money: 100 },
-              { name: "王永国", money: 50 },
-              { name: "吴正龙", money: 50 },
-              { name: "孙日新", money: 60 },
-              { name: "刘士贵", money: 60 },
-              { name: "李文中", money: 200 },
-              { name: "宋明星", money: 40 },
-              { name: "徐华", money: 40 },
-              { name: "李文德", money: 40 },
-              { name: "熊登平", money: 150 },
-              { name: "邓祥生", money: 50 },
-              { name: "姚启阔", money: 60 },
-              { name: "孙武先", money: 60 },
-              { name: "李国朴", money: 50 },
-              { name: "蔡家红", money: 50 },
-              { name: "张少如", money: 200 },
-              { name: "尹德楼", money: 30 },
-              { name: "孙福田", money: 50 },
-              { name: "江学兵", money: 50 },
-              { name: "张泽玉", money: 100 },
-              { name: "裴青山", money: 60 },
-              { name: "裴青红", money: 50 },
-              { name: "高传富", money: 50 },
-              { name: "刘少军", money: 50 },
-              { name: "夏德俊", money: 30 },
-              { name: "徐应中", money: 50 },
-              { name: "韩明", money: 40 },
-              { name: "韩志华", money: 40 },
-              { name: "朱启如", money: 50 },
-              { name: "夏德喜", money: 100 },
-              { name: "梅建平", money: 100 },
-              { name: "张正江", money: 50 },
-              { name: "万永发", money: 40 },
-              { name: "徐德如", money: 60 },
-              { name: "李如华", money: 50 },
-              { name: "李如红", money: 50 },
-              { name: "孙云财", money: 50 },
-              { name: "祝德新", money: 50 },
-              { name: "丁士平", money: 100 },
-              { name: "裴青山", money: 50 },
-              { name: "余文凯", money: 100 },
-              { name: "张德学", money: 60 },
-              { name: "张荣兵", money: 50 },
-              { name: "彭德龙", money: 60 },
-              { name: "吴志国", money: 100 },
-              { name: "王玉乐", money: 50 },
-              { name: "郭华明", money: 50 },
-              { name: "陈月彬", money: 50 },
-              { name: "张德耀", money: 50 },
-              { name: "胡国亚", money: 50 },
-              { name: "朱真有", money: 100 },
-              { name: "陈香", money: 50 },
-              { name: "李金建", money: 50 },
-              { name: "史少轩", money: 50 },
-              { name: "田向海", money: 100 },
-              { name: "高传凯", money: 50 },
-              { name: "张亚洲", money: 200 },
-              { name: "朱泽禄", money: 50 },
-              { name: "陈月学", money: 50 },
-              { name: "常友海", money: 50 },
-              { name: "张浩良", money: 50 },
-              { name: "陈立中", money: 50 },
-              { name: "刘志友", money: 50 },
-              { name: "蔡士友", money: 50 },
-              { name: "姜明国", money: 50 },
-              { name: "许清海", money: 50 },
-              { name: "李建文", money: 40 },
-              { name: "吴强", money: 50 },
-              { name: "周建生", money: 50 },
-              { name: "张明财", money: 50 },
-              { name: "刘玉喜", money: 50 },
-              { name: "汪永红", money: 50 },
-              { name: "程吉富", money: 50 },
-              { name: "王洪刚", money: 50 },
-              { name: "刘培红", money: 50 },
-              { name: "李国良", money: 50 },
-              { name: "李长林", money: 50 },
-              { name: "徐应堂", money: 100 },
-              { name: "徐红云", money: 100 },
-              { name: "吴信凯", money: 60 },
-              { name: "余文学", money: 50 },
-              { name: "周红军", money: 50 },
-              { name: "许东林", money: 50 },
-              { name: "陈泽洲", money: 50 },
-              { name: "姜德祥", money: 50 },
-              { name: "邓祥学", money: 40 },
-              { name: "张国芳", money: 60 },
-              { name: "张庆红", money: 50 },
-              { name: "张志平", money: 50 },
-              { name: "万永根", money: 50 },
-              { name: "刘泽华", money: 50 },
-              { name: "王松乐", money: 30 },
-              { name: "李长江", money: 50 },
-              { name: "周红杰", money: 60 },
-              { name: "万永禄", money: 30 },
-              { name: "尚凤楼", money: 50 },
-              { name: "蔡昌友", money: 100 },
-              { name: "裴青海", money: 100 },
-              { name: "裴青松", money: 100 },
-              { name: "余文新", money: 50 },
-              { name: "林兴元", money: 50 },
-              { name: "裴青明", money: 60 },
-              { name: "汤军章", money: 50 },
-              { name: "许永胜", money: 50 },
-              { name: "赵丛国", money: 50 },
-              { name: "熊登国", money: 50 },
-              { name: "吴志平", money: 50 },
-              { name: "黄庆华", money: 50 },
-              { name: "裴士中", money: 50 },
-              { name: "周满义", money: 50 },
-              { name: "周满峰", money: 50 },
-              { name: "邓祥贵", money: 50 },
-              { name: "王文俊", money: 60 },
-              { name: "吴光财", money: 40 },
-              { name: "徐应兵", money: 30 },
-              { name: "徐应平", money: 30 },
-              { name: "周学义", money: 30 },
-              { name: "龚光宇", money: 50 },
-              { name: "田明科", money: 100 },
-              { name: "李德全", money: 50 },
-              { name: "倪奎", money: 100 },
-              { name: "韩志超", money: 40 },
-              { name: "宋明月", money: 40 },
-              { name: "许永发", money: 50 },
-              { name: "叶照国", money: 50 },
-              { name: "刘庆刚", money: 50 },
-              { name: "田国洲", money: 50 },
-              { name: "邓祥启", money: 60 },
-              { name: "尹光福", money: 60 },
-              { name: "黄旺友", money: 50 },
-              { name: "桂景兵", money: 60 },
-              { name: "韩志强", money: 40 },
-              { name: "韩志红", money: 40 },
-              { name: "周学财", money: 40 },
-              { name: "徐应宝", money: 40 },
-              { name: "裴青祥", money: 60 },
-              { name: "黄家强", money: 50 },
-              { name: "常家连", money: 50 },
-              { name: "周现富", money: 50 },
-              { name: "樊庆文", money: 50 },
-              { name: "熊德辉", money: 100 },
-              { name: "王士龙", money: 50 },
-              { name: "胡德喜", money: 50 },
-              { name: "汪如成", money: 50 },
-              { name: "吴道远", money: 50 },
-              { name: "宁永宝", money: 100 },
-              { name: "樊泽军", money: 50 },
-              { name: "尹光华", money: 50 },
-              { name: "张庆书", money: 100 },
-              { name: "樊泽富", money: 40 },
-              { name: "夏德林", money: 40 },
-              { name: "邓祥福", money: 40 },
-              { name: "吴正平", money: 50 },
-              { name: "黄庆功", money: 100 },
-              { name: "夏德军", money: 40 },
-              { name: "魏前春", money: 50 },
-              { name: "李启树", money: 50 },
-              { name: "柏凤刚", money: 50 },
-              { name: "吴信江", money: 50 },
-              { name: "吴信海", money: 50 },
-              { name: "王昌霞", money: 50 },
-              { name: "崔巨成", money: 50 },
-              { name: "童明刚", money: 50 },
-              { name: "王家芳", money: 40 },
-              { name: "姜新友", money: 50 },
-              { name: "吴正华", money: 50 },
-              { name: "郑开堂", money: 50 },
-              { name: "蒋良昌", money: 50 },
-              { name: "孙先中", money: 50 },
-              { name: "蔡开阳", money: 50 },
-              { name: "许东辉", money: 60 },
-              { name: "陈尚友", money: 100 },
-              { name: "张庆明", money: 100 },
-              { name: "吴德红", money: 50 },
-              { name: "董建军", money: 50 },
-              { name: "单义军", money: 40 },
-              { name: "吴玉强", money: 100 },
-              { name: "王明堂", money: 60 },
-              { name: "常启国", money: 50 },
-              { name: "李德明", money: 50 },
-              { name: "裴泽明", money: 50 },
-              { name: "裴泽生", money: 50 },
-              { name: "江工富", money: 50 },
-            ],
+            VTableData: [],
           };
         },
         computed: {
           totalMoney() {
             return this.VTableData.reduce((a, b) => a + b.money, 0);
           },
-          oneTwototalMoney() {
-            return this.VOneTwoTableData.reduce((a, b) => a + b.money, 0);
-          },
         },
         mounted() {
           this.VTableData = this.list;
-          this.VOneTwoTableData = this.onetwolist;
+          // const arr = this.list.map((v) => v.name);
 
-          // const arr = this.onetwolist.map((v) => v.name);
-          // console.log(arr, 'arr')
-
-          // 查重
           // const findDuplicates = (arr) => {
           //   const unique = new Set();
           //   const duplicates = [];
@@ -732,7 +460,7 @@
           //   return { unique: [...unique], duplicates };
           // };
 
-          // // 使用示例
+          // 使用示例
           // const { unique, duplicates } = findDuplicates(arr);
           // console.log(unique, duplicates)
 
@@ -744,44 +472,18 @@
               name: "",
               money: "",
             };
-
-            this.onetwoform = {
-              name: "",
-              money: "",
-            };
-
             this.VTableData = this.list;
-            this.VOneTwoTableData = this.onetwolist;
           },
-          // 搜索名字
           searchName() {
             this.VTableData = this.list.filter((item) => {
               return !this.form.name || item.name.includes(this.form.name);
             });
           },
-          // 搜索金额
           searchMoney() {
             this.VTableData = this.list.filter((item) => {
               return (
                 !this.form.money ||
                 Number(item.money) == Number(this.form.money)
-              );
-            });
-          },
-
-          // 十二岁礼金
-          // 搜索名字
-          searchOneTwoName() {
-            this.VOneTwoTableData = this.onetwolist.filter((item) => {
-              return !this.onetwoform.name || item.name.includes(this.onetwoform.name);
-            });
-          },
-          // 搜索金额
-          searchOneTwoMoney() {
-            this.VOneTwoTableData = this.onetwolist.filter((item) => {
-              return (
-                !this.onetwoform.money ||
-                Number(item.money) == Number(this.onetwoform.money)
               );
             });
           },
