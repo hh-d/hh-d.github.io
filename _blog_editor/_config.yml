@@ -3,7 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: HH`s Blog
+title: 黄先森的小屋
+avatar: /blog/images/avatar.jpg
 subtitle: '这是一个博客网站'
 description: '一步一个脚印'
 keywords: 'blog,学习,前端,vue,react,javascrip,typescript,阅读'

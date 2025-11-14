@@ -1,0 +1,41 @@
+name: Hexo
+title: Hexo相关
+subtitle: 'Hexo相关 | About Hexo'
+icon: /blog/assets/images/avatar.jpg
+tags: [应用程序, Hexo]
+# search:
+#   filter: /wiki/stellar/
+leftbar: 
+  - tree
+  - timeline_stellar_releases
+  - related
+base_dir: /wiki/hexo
+tree:
+  # '快速开始':
+  #   - index
+  #   # - examples
+  #   # - releases
+  # '基本使用':
+  #   - index
+  #   # - theme-settings
+  #   # - pages
+  #   # - sidebar
+  #   # - tag-plugins
+  #   # - tag-plugins/express
+  #   # - tag-plugins/data
+  #   # - tag-plugins/container
+  #   # - comments
+  # '文档系统':
+  #   - index
+  #   # - wiki-settings
+  # '进阶玩法':
+  #   - index
+  #   # - widgets
+  #   # - advanced-settings
+  #   # - notes
+  '技术支持':
+    - index
+    - init
+    # - articles
+    # - todo
+    # - contributors
