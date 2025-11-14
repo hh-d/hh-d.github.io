@@ -32,7 +32,7 @@ jobs:
 
       - name: 提交/blog目录变更
         run: |
-          git config --global user.name "HH"
+          git config --global user.name "hh-d"
           git config --global user.email "hh_self@163.com"
           git add blog/  # 只提交/blog目录的变更
           git commit -m "Auto generate blog: $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
