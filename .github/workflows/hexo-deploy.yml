@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
-        with:
-          persist-credentials: false  # 关闭默认凭证，避免权限问题
+        # with:
+          # persist-credentials: false  # 关闭默认凭证，避免权限问题
 
       - name: 安装Node.js
         uses: actions/setup-node@v4
@@ -36,4 +36,4 @@ jobs:
           git config --global user.email "hh_self@163.com"
           git add blog/  # 只提交/blog目录的变更
           git commit -m "Auto generate blog: $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
-          git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/hh-d/hh-d.github.io.git" main
+          git push origin main
