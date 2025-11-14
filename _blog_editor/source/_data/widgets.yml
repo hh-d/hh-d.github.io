@@ -54,5 +54,12 @@ sociallist:
       title: 其他
       url: /blog/friends/
 
+# lalala:
+#   layout: markdown
+#   title: 随机图片
+#   content: |
+#     ![文档](/assets/images/avatar.jpg)
+#   src: # 可以设置外部 md 文件链接
+
 
 

@@ -1,6 +1,5 @@
 ---
 # menu_id: key
-wiki: notes
 title: 记得看撒娇饭
 menu_id: notes
 tag:

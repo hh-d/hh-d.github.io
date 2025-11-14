@@ -28,7 +28,7 @@ menubar:
       url: /notes/
     - id: social
       theme: '#F44336'
-      icon: solar:chat-line-bold-duotone
+      icon:  solar:chat-line-bold-duotone
       title: 关于
       url: /about/
 
@@ -63,7 +63,7 @@ article:
   # 文章类型决定布局风格，有两种风格可选，tech: 默认技术类文章, story: 图文类文章，文字和段落间增距大。
   type: tech # tech/story
   # 许可协议
-  license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
+  license: '' # '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
   # 分享链接
   # 分享至微信会生成对应的页面二维码，weibo 和 email 会自动跳转到对应软件或网页，link 会拷贝当前页面链接至剪切板。
   # share: [wechat, weibo, email, link]
