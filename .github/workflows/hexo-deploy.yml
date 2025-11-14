@@ -6,6 +6,10 @@ on:
     paths:
       - '_blog_editor/**'  # 只有/blog_editor目录有变更时才触发
 
+# 关键：添加权限配置，允许写入仓库内容
+permissions:
+  contents: write  # 允许修改仓库文件（包括推送代码）
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
