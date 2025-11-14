@@ -1,4 +1,12 @@
 .DS_Store
 *.log
 node_modules/
-_blog_editor
+
+_blog_editor/.DS_Store
+_blog_editor/Thumbs.db
+_blog_editor/db.json
+_blog_editor/*.log
+_blog_editor/node_modules/
+_blog_editor/public/
+_blog_editor/.deploy*/
+_blog_editor/_multiconfig.yml
