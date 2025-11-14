@@ -10,3 +10,5 @@ _blog_editor/node_modules/
 _blog_editor/public/
 _blog_editor/.deploy*/
 _blog_editor/_multiconfig.yml
+
+blog/
